@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>League of Handsomes</title>
+<meta name="description" content="Every champion, runner-up, third place and Best of the Rest in the League of Handsomes since 2010.">
+<meta name="theme-color" content="#F0921A">
+<link rel="canonical" href="https://leagueofhandsomes.com/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/icon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="League of Handsomes">
+<meta property="og:title" content="League of Handsomes">
+<meta property="og:description" content="Every champion, runner-up, third place and Best of the Rest in the League of Handsomes since 2010.">
+<meta property="og:url" content="https://leagueofhandsomes.com/">
+<meta property="og:image" content="https://leagueofhandsomes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="League of Handsomes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="League of Handsomes">
+<meta name="twitter:description" content="Every champion, runner-up, third place and Best of the Rest in the League of Handsomes since 2010.">
+<meta name="twitter:image" content="https://leagueofhandsomes.com/assets/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+
+<style>
+/* ============================================================
+   LEAGUE OF HANDSOMES
+   Flat color, hard edges, black keylines. Every value below is
+   sampled straight off the source art.
+   ============================================================ */
+
+:root {
+  --squid:      #ADD9C5;   /* skin */
+  --squid-dk:   #7CBFA8;
+  --squid-lt:   #CDE8DB;
+  --shirt:      #AB8A2D;   /* the shirt */
+  --shirt-lt:   #D4AF44;
+  --amber:      #FEC469;   /* Bold & Brash ground */
+  --orange:     #F0921A;
+  --yellow:     #F5E75E;
+  --line:       #000000;
+  --cream:      #FBF4E2;
+
+  --gold:       #F2C230;
+  --silver:     #C6CBC4;
+  --bronze:     #D0762A;
+  --brash:      #4E9E63;
+
+  --rule: 3px;
+
+  --t-hero:  clamp(2.35rem, 9.6vw, 6.6rem);
+  --t-h2:    clamp(2rem, 6.5vw, 4rem);
+  --t-year:  clamp(2.4rem, 7vw, 4.2rem);
+
+  --disp: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --gut: clamp(1rem, 4vw, 3rem);
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--squid);
+  color: var(--line);
+  font-family: var(--disp);
+  font-variation-settings: "wdth" 100;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+::selection { background: var(--line); color: var(--yellow); }
+
+:focus-visible {
+  outline: var(--rule) solid var(--line);
+  outline-offset: 2px;
+}
+.on-dark :focus-visible, .brash :focus-visible { outline-color: var(--yellow); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(1.5rem, 5vw, 3rem) clamp(2.5rem, 6vw, 4rem);
+  padding-inline: var(--gut);
+  border-bottom: 6px solid var(--line);
+}
+
+.hero__burst {
+  position: absolute;
+  top: 0; left: 50%;
+  width: min(230vw, 2000px);
+  aspect-ratio: 1;
+  max-width: none;
+  transform: translate(-50%, -33%);
+  z-index: -1;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 2.5deg at 50% 50%,
+    var(--yellow) 0deg 5deg,
+    var(--orange) 5deg 10deg
+  );
+}
+
+.hero__inner {
+  max-width: 940px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero__face {
+  width: clamp(200px, 34vw, 330px);
+  aspect-ratio: 1;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  border: 7px solid var(--line);
+  background: var(--cream);
+  overflow: hidden;
+}
+.hero__face img { width: 100%; height: 100%; object-fit: cover; }
+
+.wordmark {
+  position: relative;
+  background: var(--line);
+  color: var(--squid);
+  padding: clamp(1rem, 3.5vw, 1.6rem) clamp(1rem, 4vw, 2.25rem) clamp(1.1rem, 3.5vw, 1.5rem);
+}
+.wordmark__pre {
+  color: var(--shirt-lt);
+  margin-bottom: .35rem;
+}
+.wordmark h1 {
+  font-size: var(--t-hero);
+  font-weight: 900;
+  font-variation-settings: "wdth" 110;
+  line-height: .82;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+  margin: 0;
+  text-wrap: balance;
+}
+.wordmark h1 .of {
+  display: block;
+  font-size: .3em;
+  font-weight: 600;
+  font-variation-settings: "wdth" 78;
+  letter-spacing: .42em;
+  line-height: 1;
+  padding-block: .45em .3em;
+  color: var(--amber);
+}
+
+/* reigning champion */
+.reign {
+  max-width: 720px;
+  margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+  background: var(--shirt);
+  border: 6px solid var(--line);
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem) clamp(1.1rem, 3vw, 1.6rem);
+  display: grid;
+  gap: .1rem;
+  text-align: center;
+}
+.reign__label { color: var(--line); }
+.reign__name {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" 112;
+  text-transform: uppercase;
+  line-height: .95;
+  letter-spacing: -.01em;
+  margin: .3rem 0 0;
+}
+.reign__team {
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  margin: .15rem 0 0;
+}
+.reign__year {
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: .7rem 0 0;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+
+.section { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+
+.section--wall  { background: var(--squid); }
+.section--table { background: var(--line); color: var(--cream); border-block: 6px solid var(--line); }
+
+.section__title {
+  font-size: var(--t-h2);
+  font-weight: 900;
+  font-variation-settings: "wdth" 112;
+  text-transform: uppercase;
+  line-height: .88;
+  letter-spacing: -.02em;
+  margin: .3rem 0 0;
+  text-wrap: balance;
+}
+.section__note {
+  margin: .9rem 0 0;
+  max-width: 54ch;
+  font-size: 1rem;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+.section--table .label { color: var(--amber); }
+.section--wall .label  { color: var(--line); }
+
+/* ============================================================
+   THE WALL
+   ============================================================ */
+
+.wall {
+  margin-top: clamp(1.25rem, 3.5vw, 2rem);
+  border-top: 6px solid var(--line);
+}
+
+.placard {
+  display: grid;
+  grid-template-columns: minmax(112px, 170px) 1fr;
+  gap: clamp(.9rem, 3.5vw, 2.5rem);
+  padding-block: clamp(1.4rem, 3.5vw, 2rem);
+  border-bottom: var(--rule) solid var(--line);
+  align-items: start;
+}
+
+.placard__year {
+  font-size: var(--t-year);
+  font-weight: 900;
+  font-variation-settings: "wdth" 108;
+  line-height: .84;
+  letter-spacing: -.035em;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+.placard__ord {
+  font-family: var(--mono);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: .45rem 0 0;
+}
+
+.podium { display: grid; gap: .45rem; }
+
+/* champion: a mustard plate */
+.champ {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .3rem .9rem;
+  background: var(--shirt);
+  border: var(--rule) solid var(--line);
+  padding: .6rem .9rem .7rem;
+}
+.champ .who {
+  font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" 106;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.champ .team { font-size: 1.02rem; }
+
+.finish {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: .8rem;
+  align-items: baseline;
+  padding-left: .15rem;
+}
+.finish__mark {
+  font-family: var(--mono);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.finish__who {
+  display: flex;
+  align-items: baseline;
+  gap: .3rem .8rem;
+  flex-wrap: wrap;
+}
+
+.who {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1.08rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 2px solid transparent;
+}
+.who:hover { border-bottom-color: currentColor; }
+
+.team {
+  font-style: italic;
+  font-weight: 500;
+  font-size: .98rem;
+  line-height: 1.35;
+}
+
+.honorable {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem .8rem;
+  margin-top: .3rem;
+  padding: .45rem .9rem .5rem;
+  background: var(--squid-lt);
+  border: 2px solid var(--line);
+}
+.honorable__tag {
+  font-family: var(--mono);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.honorable .who { font-size: .98rem; }
+
+/* live season */
+.placard--live {
+  background: var(--amber);
+  border-bottom: 6px solid var(--line);
+  align-items: center;
+  padding-inline: clamp(.8rem, 2.5vw, 1.4rem);
+}
+.live__msg {
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  font-weight: 600;
+  margin: 0;
+  text-wrap: pretty;
+}
+.live__dot {
+  display: inline-block;
+  width: 12px; height: 12px;
+  background: var(--line);
+  margin-right: .55rem;
+}
+
+/* ============================================================
+   LEDGER
+   ============================================================ */
+
+.tablewrap {
+  overflow-x: auto;
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+  border: var(--rule) solid var(--squid);
+}
+table.ledger {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.ledger th { padding: 0; }
+.ledger thead tr { background: var(--shirt); }
+.ledger thead th { border-bottom: var(--rule) solid var(--squid); }
+.sortbtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--line);
+  font-family: var(--mono);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .8rem .9rem;
+}
+.sortbtn--num { justify-content: flex-end; }
+.sortbtn:hover { background: var(--shirt-lt); }
+.sortbtn .arrow {
+  flex: none;
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: 0;
+}
+.sortbtn .arrow.up { border-top: 0; border-bottom: 5px solid currentColor; }
+th[aria-sort] .sortbtn .arrow { opacity: 1; }
+
+.ledger td {
+  padding: .62rem .9rem;
+  border-bottom: 1px solid #2E3B35;
+  text-align: left;
+}
+.ledger tbody tr:last-child td { border-bottom: 0; }
+.ledger tbody tr:hover { background: #16221D; }
+.ledger td.num { text-align: right; font-family: var(--mono); font-size: .85rem; font-weight: 600; }
+.ledger td.name { width: 30%; }
+.rank-col {
+  width: 48px;
+  text-align: right !important;
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--squid-dk);
+}
+.ledger .name button {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1.04rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--cream);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.ledger .name button:hover { border-bottom-color: var(--amber); }
+.ledger tr.is-champ .name button { color: var(--amber); }
+
+.shelf { display: inline-flex; align-items: center; justify-content: flex-end; gap: .5rem; }
+.pips { display: flex; gap: 3px; }
+.pip { width: 8px; height: 8px; }
+.pip--gold { background: var(--gold); }
+.pip--silver { background: var(--silver); }
+.pip--bronze { background: var(--bronze); }
+.pip--brash { background: var(--brash); }
+.zero { color: #4E605A; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--squid);
+}
+.legend span { display: inline-flex; align-items: center; gap: .45rem; }
+
+/* ============================================================
+   BOLD AND BRASH
+   ============================================================ */
+
+.brash {
+  background: var(--amber);
+  color: var(--line);
+  padding-block: clamp(2.5rem, 7vw, 4.5rem);
+  border-bottom: 6px solid var(--line);
+}
+.brash__title {
+  font-size: clamp(2.4rem, 9.5vw, 5.6rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" 116;
+  text-transform: uppercase;
+  line-height: .84;
+  letter-spacing: -.03em;
+  margin: .25rem 0 0;
+  text-wrap: balance;
+}
+.brash__title em {
+  font-style: italic;
+  font-weight: 600;
+  font-variation-settings: "wdth" 80;
+  font-size: .42em;
+  letter-spacing: 0;
+}
+.brash__note {
+  display: inline-block;
+  margin: .9rem 0 0;
+  padding: .3rem .7rem .35rem;
+  background: var(--line);
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.brash__body {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  align-items: start;
+  margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
+}
+@media (max-width: 760px) { .brash__body { grid-template-columns: 1fr; } }
+
+.painting {
+  margin: 0;
+  border: 12px solid var(--shirt);
+  outline: var(--rule) solid var(--line);
+  background: var(--shirt);
+}
+.painting img { border: var(--rule) solid var(--line); }
+.painting figcaption {
+  font-family: var(--mono);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding-top: .6rem;
+  text-align: center;
+}
+
+.canvases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  align-items: start;
+  gap: clamp(1rem, 2.5vw, 1.4rem);
+}
+.canvas {
+  margin: 0;
+  background: var(--cream);
+  border: var(--rule) solid var(--line);
+  padding: .9rem 1rem 1rem;
+}
+.canvas:nth-child(2n) { background: var(--squid-lt); }
+.canvas__year {
+  font-family: var(--mono);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  margin: 0;
+}
+.canvas__title {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  margin: .4rem 0 .45rem;
+}
+.canvas__who {
+  font-weight: 900;
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.canvas__label {
+  display: inline-block;
+  margin-top: .7rem;
+  padding: .2rem .5rem;
+  background: var(--line);
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   DOSSIER
+   ============================================================ */
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0,0,0,.8);
+  display: grid;
+  place-items: end center;
+  padding: max(4vh, 1rem) 1rem 0;
+}
+@media (min-width: 720px) { .scrim { place-items: center; padding: 2rem 1rem; } }
+
+.dossier {
+  width: min(560px, 100%);
+  max-height: min(86vh, 780px);
+  overflow-y: auto;
+  background: var(--squid);
+  color: var(--line);
+  border: 6px solid var(--line);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+.dossier__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: var(--rule) solid var(--line);
+  padding-bottom: .9rem;
+}
+.dossier__name {
+  font-size: clamp(1.9rem, 6.5vw, 2.8rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" 110;
+  text-transform: uppercase;
+  line-height: .9;
+  letter-spacing: -.02em;
+  margin: .3rem 0 0;
+}
+.dossier__close {
+  flex: none;
+  width: 36px; height: 36px;
+  border: var(--rule) solid var(--line);
+  background: var(--line);
+  color: var(--squid);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.dossier__close:hover { background: var(--shirt); color: var(--line); }
+
+.dossier__tally {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 1.15rem 0 1.25rem;
+  border: var(--rule) solid var(--line);
+}
+.tally {
+  padding: .65rem .4rem .7rem;
+  text-align: center;
+  border-right: 2px solid var(--line);
+}
+.tally:last-child { border-right: 0; }
+.tally--1 { background: var(--gold); }
+.tally--2 { background: var(--silver); }
+.tally--3 { background: var(--bronze); }
+.tally--r { background: var(--brash); }
+.tally__n {
+  font-weight: 900;
+  font-size: 1.7rem;
+  line-height: 1;
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+.tally__k {
+  font-family: var(--mono);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: .35rem 0 0;
+}
+
+.drow {
+  display: grid;
+  grid-template-columns: 54px 34px 1fr;
+  gap: .7rem;
+  align-items: baseline;
+  padding-block: .5rem;
+  border-bottom: 2px solid rgba(0,0,0,.18);
+}
+.drow:last-child { border-bottom: 0; }
+.drow__yr { font-family: var(--mono); font-size: .78rem; font-weight: 600; }
+.drow__pl { font-family: var(--mono); font-size: .66rem; font-weight: 700; }
+.drow--r .drow__pl { font-size: .56rem; }
+.drow__tm { font-style: italic; font-weight: 500; font-size: 1rem; }
+.drow--1 .drow__tm { font-style: normal; font-weight: 900; text-transform: uppercase; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.foot {
+  background: var(--line);
+  color: var(--squid);
+  padding-block: clamp(2rem, 5vw, 3.25rem);
+}
+.foot__grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  flex-wrap: wrap;
+}
+.foot__mark {
+  font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" 112;
+  text-transform: uppercase;
+  line-height: .9;
+  letter-spacing: -.015em;
+  margin: 0;
+}
+.foot__mark em { font-style: normal; color: var(--amber); }
+.foot__fig { width: clamp(82px, 15vw, 128px); flex: none; }
+
+/* ============================================================
+   SMALL SCREENS
+   ============================================================ */
+
+/* the ledger stops being a table and becomes a stack of cards */
+@media (max-width: 700px) {
+  .tablewrap { overflow-x: visible; border: 0; }
+  table.ledger { min-width: 0; display: block; }
+  .ledger thead { display: none; }
+  .ledger tbody { display: block; }
+  .ledger tr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(62px, 1fr));
+    gap: .4rem .6rem;
+    align-items: baseline;
+    padding: .7rem .8rem .8rem;
+    border: 2px solid var(--squid);
+    margin-top: -2px;
+  }
+  .ledger tbody tr:hover { background: none; }
+  .ledger td { display: block; border: 0; padding: 0; }
+  .ledger td.rank-col { display: none; }
+  .ledger td.name { grid-column: 1 / -1; width: auto; }
+  .ledger td.name::before {
+    content: attr(data-rank);
+    font-family: var(--mono);
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--squid-dk);
+    margin-right: .55rem;
+  }
+  .ledger td.num { text-align: left; font-size: .78rem; }
+  .ledger td.num.is-zero { display: none; }
+  .ledger td.num .shelf { justify-content: flex-start; }
+  .ledger td.num::before {
+    content: attr(data-col);
+    display: block;
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--squid-dk);
+    margin-bottom: .15rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero { padding-block: 1.25rem 2rem; }
+  .hero__face { border-width: 5px; }
+
+  .placard { grid-template-columns: 1fr; gap: .6rem; }
+  .placard__year { font-size: clamp(2.4rem, 13.5vw, 3.4rem); }
+  .placard__ord { margin-top: .25rem; }
+  .champ { padding: .55rem .75rem .65rem; }
+  .finish { grid-template-columns: 22px 1fr; gap: .55rem; }
+  .honorable { padding: .45rem .7rem .5rem; }
+  .who { padding-block: .15rem; }
+
+  .painting { max-width: 270px; margin-inline: auto; border-width: 8px; }
+
+  .dossier { border-width: 4px; }
+  .dossier__tally { grid-template-columns: repeat(2, 1fr); }
+  .tally:nth-child(2) { border-right: 0; }
+  .tally:nth-child(1), .tally:nth-child(2) { border-bottom: 2px solid var(--line); }
+  .drow { grid-template-columns: 48px 30px 1fr; gap: .5rem; }
+
+  .foot__grid { align-items: center; gap: 1.25rem; }
+}
+
+@media (max-width: 420px) {
+  .canvases { grid-template-columns: 1fr; }
+  .champ { gap: .15rem .6rem; }
+  .champ .team { font-size: .95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+}
+</style>
+</head>
+<body>
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <div class="hero__burst" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__face">
+      <img src="assets/handsome-face.png" alt="League of Handsomes logo" width="640" height="640">
+    </div>
+    <div class="wordmark">
+      <p class="label wordmark__pre">Established 2010</p>
+      <h1>League<span class="of">of</span>Handsomes</h1>
+    </div>
+
+    <div class="reign">
+      <p class="label reign__label">Reigning Champion</p>
+      <p class="reign__name" id="reignName">Braden</p>
+      <p class="reign__team" id="reignTeam">Your Hung Uncle</p>
+      <p class="reign__year" id="reignYear">2025</p>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================
+     THE WALL
+     ========================================================== -->
+<section class="section section--wall" id="wall">
+  <div class="wrap">
+    <h2 class="section__title">The Wall of Champions</h2>
+    <div class="wall" id="wallList"></div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     LEDGER
+     ========================================================== -->
+<section class="section section--table on-dark" id="ledger">
+  <div class="wrap">
+    <h2 class="section__title">The All-Time Ledger</h2>
+
+    <div class="tablewrap">
+      <table class="ledger" id="ledgerTable">
+        <thead>
+          <tr>
+            <th scope="col" class="rank-col"><span class="sr-only">Rank</span></th>
+            <th scope="col" data-key="name"><button class="sortbtn" type="button">Manager <span class="arrow" aria-hidden="true"></span></button></th>
+            <th scope="col" data-key="first"><button class="sortbtn sortbtn--num" type="button">Titles <span class="arrow" aria-hidden="true"></span></button></th>
+            <th scope="col" data-key="second"><button class="sortbtn sortbtn--num" type="button">2nd <span class="arrow" aria-hidden="true"></span></button></th>
+            <th scope="col" data-key="third"><button class="sortbtn sortbtn--num" type="button">3rd <span class="arrow" aria-hidden="true"></span></button></th>
+            <th scope="col" data-key="rest"><button class="sortbtn sortbtn--num" type="button">Of the Rest <span class="arrow" aria-hidden="true"></span></button></th>
+          </tr>
+        </thead>
+        <tbody id="ledgerBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     BOLD AND BRASH
+     ========================================================== -->
+<section class="brash" id="brash">
+  <div class="wrap">
+    <h2 class="brash__title">Bold <em>and</em> Brash</h2>
+    <p class="brash__note">Best of the Rest</p>
+
+    <div class="brash__body">
+      <figure class="painting">
+        <img src="assets/bold-and-brash.png" alt="Bold and Brash" width="399" height="501">
+      </figure>
+      <div class="canvases" id="canvases"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <p class="foot__mark">League <em>of</em> Handsomes</p>
+    <img class="foot__fig" src="assets/handsome-figure.png" alt="" width="288" height="530">
+  </div>
+</footer>
+
+<!-- dossier -->
+<div class="scrim" id="scrim" hidden>
+  <div class="dossier" role="dialog" aria-modal="true" aria-labelledby="dossierName">
+    <div class="dossier__top">
+      <div>
+        <p class="label" id="dossierRole">Manager File</p>
+        <h3 class="dossier__name" id="dossierName">Name</h3>
+      </div>
+      <button class="dossier__close" id="dossierClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="dossier__tally" id="dossierTally"></div>
+    <div class="dossier__list" id="dossierList"></div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   THE RECORD
+   To add a season, copy the last block, change the names, and
+   drop it at the bottom. Everything else on the page (ledger,
+   annex, dossiers, reigning champion) recalculates from here.
+   ============================================================ */
+const SEASONS = [
+  { year: 2010,
+    first:  { manager: "Braden", team: "Team Butt Fury" },
+    second: { manager: "Eric",   team: "The Gingers" },
+    third:  { manager: "Maxx",   team: "Basically Amazing" },
+    rest: [] },
+
+  { year: 2011,
+    first:  { manager: "Maxx",  team: "Basically Amazing" },
+    second: { manager: "Aaron", team: "Mile High Club" },
+    third:  { manager: "Matt",  team: "Matty Ice" },
+    rest: [] },
+
+  { year: 2012,
+    first:  { manager: "Matt",  team: "Oklahoma Sooners" },
+    second: { manager: "Maxx",  team: "Basically Amazing" },
+    third:  { manager: "Molly", team: "Princess Bitches" },
+    rest: [] },
+
+  { year: 2013,
+    first:  { manager: "Maxx",  team: "Basically Amazing" },
+    second: { manager: "Logan", team: "Aces" },
+    third:  { manager: "Eric",  team: "Gays" },
+    rest: [] },
+
+  { year: 2014,
+    first:  { manager: "Maxx",  team: "Basically Amazing" },
+    second: { manager: "Mikey", team: "Blue Mountain State" },
+    third:  { manager: "Caleb", team: "Token Blackmon" },
+    rest: [] },
+
+  { year: 2015,
+    first:  { manager: "Logan", team: "Black Mama's" },
+    second: { manager: "Eric",  team: "Eric's Team" },
+    third:  { manager: "CJ",    team: "CJ's Team" },
+    rest: [] },
+
+  { year: 2016,
+    first:  { manager: "Travis", team: "Travis's Team" },
+    second: { manager: "Aaron",  team: "The Stretch" },
+    third:  { manager: "Randy",  team: "Lil Stank Nooch" },
+    rest: [] },
+
+  { year: 2017,
+    first:  { manager: "Eric",   team: "Dads Poo Pussy" },
+    second: { manager: "Omlet",  team: "Chum Delight" },
+    third:  { manager: "Braden", team: "Mum's Spaghetti" },
+    rest: [] },
+
+  { year: 2018,
+    first:  { manager: "Mikey", team: "The DemoGordons" },
+    second: { manager: "Matt",  team: "In Witten We Trust" },
+    third:  { manager: "Maxx",  team: "Donald Pump" },
+    rest: [] },
+
+  { year: 2019,
+    first:  { manager: "Omlet", team: "Chum Delight" },
+    second: { manager: "Mikey", team: "The DemoGordons" },
+    third:  { manager: "CJ",    team: "Kaepernick Supporter" },
+    rest: [] },
+
+  { year: 2020,
+    first:  { manager: "Percy", team: "Red Sucks" },
+    second: { manager: "Jacob", team: "Uncle Roger" },
+    third:  { manager: "Mikey", team: "The DemoGordons" },
+    rest: [] },
+
+  { year: 2021,
+    first:  { manager: "Mary",   team: "Pull the Lever Gronk" },
+    second: { manager: "Braden", team: "Deflated Balls" },
+    third:  { manager: "Erin",   team: "2 Girls 1 Kupp" },
+    rest: [ { title: "Best of the Rest", manager: "Percy", team: "Suck My Dak" } ] },
+
+  { year: 2022,
+    first:  { manager: "Sanchez", team: "Elon Musk is my Father" },
+    second: { manager: "Maxx",    team: "Cabo or Bust" },
+    third:  { manager: "Erin",    team: "Rat Queen" },
+    rest: [ { title: "Bestest of the Rest", manager: "Percy", team: "My season is over" },
+            { title: "Better of the Rest",  manager: "Zac",   team: "Judge Jeudy" } ] },
+
+  { year: 2023,
+    first:  { manager: "Dylan",  team: "Eric Almond" },
+    second: { manager: "Braden", team: "To Infinity and Bijan" },
+    third:  { manager: "Percy",  team: "Suck My Dak" },
+    rest: [ { title: "Best of the Rest", manager: "Erin", team: "THE Queen of the Rats" } ] },
+
+  { year: 2024,
+    first:  { manager: "Zac",    team: "Bucky Thompson" },
+    second: { manager: "Percy",  team: "Suck My Dak" },
+    third:  { manager: "Braden", team: "The Cuckstars" },
+    rest: [ { title: "Best of the Rest", manager: "Maxx", team: "Zyn To Win" } ] },
+
+  { year: 2025,
+    first:  { manager: "Braden", team: "Your Hung Uncle" },
+    second: { manager: "Percy",  team: "Suck My Dak" },
+    third:  { manager: "Omlet",  team: "Chum Delight" },
+    rest: [ { title: "Best of the Rest", manager: "Maxx", team: "Playoffs Shmlayoffs" } ] }
+];
+
+/* Season currently being played. Set to null once it is finished
+   and added to the list above. */
+const LIVE_SEASON = 2026;
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const ORDINALS = ["Zeroth","First","Second","Third","Fourth","Fifth","Sixth","Seventh","Eighth",
+  "Ninth","Tenth","Eleventh","Twelfth","Thirteenth","Fourteenth","Fifteenth","Sixteenth",
+  "Seventeenth","Eighteenth","Nineteenth","Twentieth","Twenty-first","Twenty-second",
+  "Twenty-third","Twenty-fourth","Twenty-fifth"];
+const ordinal = n => ORDINALS[n] || (n + "th");
+
+const sorted = [...SEASONS].sort((a, b) => a.year - b.year);
+const latest = sorted[sorted.length - 1];
+
+/* ---------- manager index ---------- */
+const MANAGERS = new Map();
+function entry(name) {
+  if (!MANAGERS.has(name)) MANAGERS.set(name, { name, first:0, second:0, third:0, rest:0, seasons:[] });
+  return MANAGERS.get(name);
+}
+sorted.forEach(s => {
+  [["first",1],["second",2],["third",3]].forEach(([key, place]) => {
+    const f = s[key];
+    if (!f) return;
+    const m = entry(f.manager);
+    m[key]++;
+    m.seasons.push({ year: s.year, place, team: f.team });
+  });
+  (s.rest || []).forEach(r => {
+    const m = entry(r.manager);
+    m.rest++;
+    m.seasons.push({ year: s.year, place: 4, team: r.team, label: r.title });
+  });
+});
+MANAGERS.forEach(m => {
+  m.podiums = m.first + m.second + m.third;
+  m.seasons.sort((a, b) => b.year - a.year || a.place - b.place);
+});
+const ROSTER = [...MANAGERS.values()];
+
+/* ---------- reigning champion ---------- */
+$("#reignName").textContent = latest.first.manager;
+$("#reignTeam").textContent = latest.first.team;
+$("#reignYear").textContent = latest.year;
+
+/* ---------- the wall ---------- */
+const MARK = { 2: "II", 3: "III" };
+
+function placard(s, index) {
+  const honors = (s.rest || []).map(r => `
+    <div class="honorable">
+      <span class="honorable__tag">${esc(r.title)}</span>
+      <button class="who" type="button" data-manager="${esc(r.manager)}">${esc(r.manager)}</button>
+      <span class="team">${esc(r.team)}</span>
+    </div>`).join("");
+
+  const minor = [["second", 2], ["third", 3]].map(([k, place]) => `
+    <div class="finish">
+      <span class="finish__mark" aria-hidden="true">${MARK[place]}</span>
+      <span class="finish__who">
+        <button class="who" type="button" data-manager="${esc(s[k].manager)}">${esc(s[k].manager)}</button>
+        <span class="team">${esc(s[k].team)}</span>
+      </span>
+    </div>`).join("");
+
+  return `
+    <article class="placard" data-year="${s.year}">
+      <div>
+        <h3 class="placard__year">${s.year}</h3>
+        <p class="placard__ord">${ordinal(index + 1)} season</p>
+      </div>
+      <div class="podium">
+        <div class="champ">
+          <button class="who" type="button" data-manager="${esc(s.first.manager)}">${esc(s.first.manager)}</button>
+          <span class="team">${esc(s.first.team)}</span>
+        </div>
+        ${minor}
+        ${honors}
+      </div>
+    </article>`;
+}
+
+const liveHTML = LIVE_SEASON ? `
+  <article class="placard placard--live" data-year="${LIVE_SEASON}" data-live="1">
+    <div>
+      <h3 class="placard__year">${LIVE_SEASON}</h3>
+      <p class="placard__ord">${ordinal(sorted.length + 1)} season</p>
+    </div>
+    <p class="live__msg"><span class="live__dot" aria-hidden="true"></span>Underway</p>
+  </article>` : "";
+
+$("#wallList").innerHTML = liveHTML + sorted
+  .map((s, i) => ({ s, i }))
+  .reverse()
+  .map(({ s, i }) => placard(s, i))
+  .join("");
+
+/* ---------- ledger ---------- */
+let sortKey = "first";
+let sortDir = -1;
+
+function pips(n, kind) {
+  if (!n) return `<span class="zero">0</span>`;
+  return `<span class="shelf"><span class="pips">${
+    Array.from({ length: n }, () => `<i class="pip pip--${kind}"></i>`).join("")
+  }</span><span>${n}</span></span>`;
+}
+
+function renderLedger() {
+  const rows = [...ROSTER].sort((a, b) => {
+    if (sortKey === "name") return sortDir * a.name.localeCompare(b.name);
+    const d = (a[sortKey] - b[sortKey]) * sortDir;
+    if (d) return d;
+    return (b.first - a.first) || (b.second - a.second) || (b.third - a.third) ||
+           a.name.localeCompare(b.name);
+  });
+
+  const cell = (n, kind, col) =>
+    `<td class="num${n ? "" : " is-zero"}" data-col="${col}">${pips(n, kind)}</td>`;
+
+  $("#ledgerBody").innerHTML = rows.map((m, i) => `
+    <tr class="${m.first ? "is-champ" : ""}">
+      <td class="rank-col">${i + 1}</td>
+      <td class="name" data-rank="${i + 1}"><button type="button" data-manager="${esc(m.name)}">${esc(m.name)}</button></td>
+      ${cell(m.first,  "gold",   "Titles")}
+      ${cell(m.second, "silver", "2nd")}
+      ${cell(m.third,  "bronze", "3rd")}
+      ${cell(m.rest,   "brash",  "Rest")}
+    </tr>`).join("");
+
+  document.querySelectorAll("#ledgerTable thead th[data-key]").forEach(th => {
+    if (th.dataset.key === sortKey) {
+      th.setAttribute("aria-sort", sortDir === -1 ? "descending" : "ascending");
+      th.querySelector(".arrow").classList.toggle("up", sortDir === 1);
+    } else {
+      th.removeAttribute("aria-sort");
+    }
+  });
+}
+
+document.querySelectorAll("#ledgerTable thead th[data-key]").forEach(th => {
+  th.querySelector(".sortbtn").addEventListener("click", () => {
+    const key = th.dataset.key;
+    if (key === sortKey) sortDir *= -1;
+    else { sortKey = key; sortDir = key === "name" ? 1 : -1; }
+    renderLedger();
+  });
+});
+renderLedger();
+
+/* ---------- the annex ---------- */
+const annex = [];
+sorted.forEach(s => (s.rest || []).forEach(r => annex.push({ ...r, year: s.year })));
+$("#canvases").innerHTML = annex.reverse().map(r => `
+  <figure class="canvas">
+    <p class="canvas__year">${r.year}</p>
+    <p class="canvas__title">${esc(r.team)}</p>
+    <p class="canvas__who">${esc(r.manager)}</p>
+    <span class="canvas__label">${esc(r.title)}</span>
+  </figure>`).join("");
+
+/* ---------- dossier ---------- */
+const scrim = $("#scrim");
+const PLACE_WORD = { 1: "1ST", 2: "2ND", 3: "3RD" };
+let lastFocus = null;
+
+function openDossier(name) {
+  const m = MANAGERS.get(name);
+  if (!m) return;
+  lastFocus = document.activeElement;
+  const best = Math.min(...m.seasons.map(s => s.place));
+  const apps = `${m.seasons.length} appearance${m.seasons.length === 1 ? "" : "s"}`;
+
+  $("#dossierName").textContent = m.name;
+  $("#dossierRole").textContent = m.first
+    ? `${m.first === 1 ? "Champion" : m.first + "-time champion"} · ${apps}`
+    : `Best finish: ${best === 4 ? "Of the Rest" : PLACE_WORD[best]} · ${apps}`;
+
+  $("#dossierTally").innerHTML = [
+    ["1", m.first,  "Titles"],
+    ["2", m.second, "Runner-up"],
+    ["3", m.third,  "Third"],
+    ["r", m.rest,   "Of the Rest"]
+  ].map(([k, n, label]) => `
+    <div class="tally tally--${k}">
+      <span class="tally__n">${n}</span>
+      <p class="tally__k">${label}</p>
+    </div>`).join("");
+
+  $("#dossierList").innerHTML = m.seasons.map(s => `
+    <div class="drow drow--${s.place === 4 ? "r" : s.place}">
+      <span class="drow__yr">${s.year}</span>
+      <span class="drow__pl">${s.place === 4 ? "REST" : PLACE_WORD[s.place]}</span>
+      <span class="drow__tm">${esc(s.team)}</span>
+    </div>`).join("");
+
+  scrim.hidden = false;
+  document.body.style.overflow = "hidden";
+  $("#dossierClose").focus();
+}
+
+function closeDossier() {
+  scrim.hidden = true;
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-manager]");
+  if (btn) { openDossier(btn.dataset.manager); return; }
+  if (e.target === scrim) closeDossier();
+});
+$("#dossierClose").addEventListener("click", closeDossier);
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !scrim.hidden) closeDossier();
+});
+</script>
+</body>
+</html>
